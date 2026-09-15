@@ -612,7 +612,7 @@ export default function CameraCapture({ onCapture, onClose }) {
       <input
         ref={fileInputRef}
         type="file"
-        accept="image/*"
+        acgradlew assembleDebugcept="image/*"
         className="hidden"
         onChange={handleFileFallback}
       />
