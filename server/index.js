@@ -476,7 +476,6 @@
 
 
 
-
 import express from "express";
 import cors from "cors";
 import fs from "fs";
@@ -716,6 +715,10 @@ app.post("/api/upload", auth, (req, res) => {
 
 app.get("/api/health", (req, res) => res.json({ ok: true }));
 
-app.listen(PORT, () => {
-  console.log(`Oil survey API listening on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`Oil survey API listening on http://localhost:${PORT}`);
+  });
+}
+
+export default app;
